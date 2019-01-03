@@ -32,7 +32,7 @@ Check out some of the examples in the [examples](examples) directory.  The follo
 
 ## Redis
 
-### Push
+### Push (BLPOP)
 
 ```php
 /**
@@ -47,7 +47,7 @@ Check out some of the examples in the [examples](examples) directory.  The follo
 );
 ```
 
-### PubSub
+### PubSub (SUBSCRIBE)
 
 ```php
 /**
