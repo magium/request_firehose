@@ -5,7 +5,7 @@ This is a simple project that I created because I was working in a client's envi
 # To install
 
 ```bash
-composer install magium/request_firehose
+composer install magium/request-firehose
 ```
 
 # To Use

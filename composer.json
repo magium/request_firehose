@@ -1,5 +1,5 @@
 {
-    "name": "10n/request_firehose",
+    "name": "10n/request-firehose",
     "description": "A simple library to push request metadata into a collection service (like Redis) from multiple sources",
     "type": "library",
     "suggest": {
