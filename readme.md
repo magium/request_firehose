@@ -1,6 +1,12 @@
 # PHP Request Firehose
 
-This is a simple project that I created because I was working in a client's environment and all of their access logs were streamed into AWS Cloudwatch.  That's definitely a preferred approach if you want to do regular log analysis, but I ran into a situation where it would have been incredibly nice to have just tailed the log files.
+This library attaches itself to the PHP request and upon request shutdown it will send the request meta data or a log file entry to an adapter, currently Redis or Mongo, where it can be stored, processed or tailed.  It is intended for use in clustered systems where multiple machines are serving HTTP requests and, in general, where devops would like to have a centralized place for monitoring or storing requests that can be used alongside other logging tools.
+
+For example, if you wanted to `tail` and `grep` the logs for a specific IP address you would deploy the Redis publish code (see below) and run the following command:
+
+```
+stdbuf -oL redis-cli --raw subscribe ingestion | grep -v -E 'message|ingestion' | grep '127.0.0.1'
+```
 
 # To install
 
